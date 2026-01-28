@@ -17,10 +17,10 @@ void main() {
     }
     Scanner pick = new Scanner(System.in);
 
-    System.out.println("pick book or video, press('v' or b) ");
+    System.out.println("pick book or video, press('v' or 'b') ");
     String borv = pick.nextLine();
-    for (int i=1; i < x; i++){
-     System.out.print("Item number" + "\t" + i + "\p");
+    for (int i=1; i < x+1; i++){
+     System.out.print("Item number" + "\t" + i + "\n");
     }
 
 
