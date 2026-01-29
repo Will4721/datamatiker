@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Weathercreatervariable {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);
-        int p = 0;
+        int pi = 0;
         int temp = 1;
         int windspeed = 1;
         int type = 1;
@@ -11,7 +11,7 @@ public class Weathercreatervariable {
         String start = myObj.nextLine();
 
         if (start.equals("start")){
-            while (p == 0) {
+            while (pi == 0) {
                 if (type<50 && type>26){
                     System.out.println("the weather is now thunder\n**************************");
                 }
@@ -39,7 +39,7 @@ public class Weathercreatervariable {
                     System.out.println("windspeed is now\t" + windspeed + "km/h");
                 }
                 if (next.equals("end")){
-                    p = 1;
+                    pi = 1;
                 }
 
             }
