@@ -1,5 +1,5 @@
 public abstract class round {
-    private int health;
+    private static int health;
     private int damage;
 
     public round(int health, int damage){
@@ -17,6 +17,20 @@ public abstract class round {
     @Override
     public String toString() {
         return "Health: " + health + " Damage: " + damage;
+    }
+
+    public static void takeDamage(int amount){
+        health -= amount;
+        if(health <0){
+            health = 0;
+            System.out.println("you win round 1");
+            health = health + 20;
+
+        }
+
+    }
+    public boolean isAlive() {
+        return health > 0;
     }
 }
 

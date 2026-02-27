@@ -1,4 +1,6 @@
 public class enemy extends round {
+     int health;
+
     public enemy(int health, int damage) {
         super(health, damage);
     }
