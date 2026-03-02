@@ -2,7 +2,6 @@ package Tamogachi;
 
 import java.util.Scanner;
 
-import static java.lang.Math.random;
 
 public class tamogachitest {
 
@@ -13,8 +12,33 @@ public class tamogachitest {
         printWelcome();
         tamogachi[] bla = pet(sc);
         printPets(bla);
-
+        printmenu();
+        while(true) {
+            dogaction(sc, bla);
+            printmenu();
+        }
     }
+    public static void dogaction(Scanner sc, tamogachi[]bla){
+        int waitforaction = Integer.parseInt(sc.nextLine());
+       if (waitforaction == 1){
+           System.out.println("                _,)\n" +
+                   "        _..._.-;-'\n" +
+                   "     .-'     `(\n" +
+                   "    /      ;   \\\n" +
+                   "   ;.' ;`  ,;  ;\n" +
+                   "  .'' ``. (  \\ ;\n" +
+                   " / f_ _L \\ ;  )\\\n" +
+                   " \\/|` '|\\/;; <;/\n" +
+                   "((; \\_/  (()       Felix Lee\n" +
+                   "     \"\n");
+           System.out.println("Your dog is playing");
+           for (int i = 0; i < bla.length; i++) {
+               int i1 = bla[i].getEnergy() - 2;
+               System.out.println("Energy level: "+bla[i].getEnergy());
+           }
+       }
+    }
+
 
     public static void printWelcome () {
         System.out.println("Welcome to the Tamogachi game ");
@@ -28,7 +52,7 @@ public class tamogachitest {
         if (type.equalsIgnoreCase("Dog")) {
             System.out.println("Pick the Name");
             String name = sc.nextLine();
-            bla[0] = new Dog(name, bla[0].getEnergy());
+            bla[0] = new Dog(name, 0);
 
         }
 
@@ -38,8 +62,25 @@ public class tamogachitest {
         for (int i = 0; i < bla.length; i++) {
             System.out.println(bla[i]);// toString() is called automatically
             System.out.println("energy level: " + bla[i].getEnergy());
-            System.out.println("");
+            System.out.println("here is your pet " + bla[i].getName());
+            System.out.println("/^-----^\\\n" +
+                    "V  o o  V\n" +
+                    " |  Y  |\n" +
+                    "  \\ Q /\n" +
+                    "  / - \\\n" +
+                    "  |    \\\n" +
+                    "  |     \\     )\n" +
+                    "  || (___\\====\n");
 
         }
+    }
+    public static void printmenu(){
+
+            System.out.println("\nMenu:");
+            System.out.println("1. Play with pet. cost: -2/-1 for dog/cat");
+            System.out.println("2. Let pet sleep. cost: +4/+2 for dog/cat ");
+            System.out.println("3. Give pet food +5/+6 for dog/cat");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
     }
 }

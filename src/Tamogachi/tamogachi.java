@@ -9,7 +9,7 @@ public abstract class tamogachi {
     public tamogachi(String Name, int Energy) {
 
         this.Name = Name;
-        this.Energy = (int)((Math.random() * 100)+1);
+        this.Energy = (int)((Math.random() * 10)+1);
 
     }
 
