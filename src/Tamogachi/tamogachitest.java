@@ -3,10 +3,10 @@ package Tamogachi;
 import java.util.Scanner;
 
 
-public class tamogachitest {
+public abstract class tamogachitest {
 
     public static void main (String[]args){
-        int rando;
+
 
         Scanner sc = new Scanner(System.in);
         printWelcome();
@@ -18,25 +18,54 @@ public class tamogachitest {
             printmenu();
         }
     }
-    public static void dogaction(Scanner sc, tamogachi[]bla){
+    public static int dogaction(Scanner sc, tamogachi[]bla) {
         int waitforaction = Integer.parseInt(sc.nextLine());
-       if (waitforaction == 1){
-           System.out.println("                _,)\n" +
-                   "        _..._.-;-'\n" +
-                   "     .-'     `(\n" +
-                   "    /      ;   \\\n" +
-                   "   ;.' ;`  ,;  ;\n" +
-                   "  .'' ``. (  \\ ;\n" +
-                   " / f_ _L \\ ;  )\\\n" +
-                   " \\/|` '|\\/;; <;/\n" +
-                   "((; \\_/  (()       Felix Lee\n" +
-                   "     \"\n");
-           System.out.println("Your dog is playing");
-           for (int i = 0; i < bla.length; i++) {
-               int i1 = bla[i].getEnergy() - 2;
-               System.out.println("Energy level: "+bla[i].getEnergy());
-           }
-       }
+        if (waitforaction == 1) {
+            System.out.println("                _,)\n" +
+                    "        _..._.-;-'\n" +
+                    "     .-'     `(\n" +
+                    "    /      ;   \\\n" +
+                    "   ;.' ;`  ,;  ;\n" +
+                    "  .'' ``. (  \\ ;\n" +
+                    " / f_ _L \\ ;  )\\\n" +
+                    " \\/|` '|\\/;; <;/\n" +
+                    "((; \\_/  (()       Felix Lee\n" +
+                    "     \"\n");
+            System.out.println("Your dog is playing");
+            System.out.println("Energy level is now: " + bla[0].Energyreduce());
+        }else if(waitforaction == 2){
+            System.out.println("              _\n" +
+                    "            ,/A\\,\n" +
+                    "          .//`_`\\\\,\n" +
+                    "        ,//`____-`\\\\,\n" +
+                    "      ,//`[_ROVER_]`\\\\,\n" +
+                    "    ,//`=  ==  __-  _`\\\\,\n" +
+                    "   //|__=  __- == _  __|\\\\\n" +
+                    "   ` |  __ .-----.  _  | `\n" +
+                    "     | - _/       \\-   |\n" +
+                    "     |__  | .-\"-. | __=|\n" +
+                    "     |  _=|/)   (\\|    |\n" +
+                    "     |-__ (/ a a \\) -__|\n" +
+                    "     |___ /`\\_Y_/`\\____|\n" +
+                    "          \\)8===8(/\n");
+            System.out.println("Your dog is Sleeping");
+            System.out.println("Energy level is now: " + bla[0].Energyadd());
+        }else if (waitforaction == 3){
+            System.out.print("    ,    /-.\n" +
+                    "   ((___/ __>\n" +
+                    "   /      }\n" +
+                    "   \\ .--.(    ___\n" +
+                    "    \\\\   \\\\  /___\\\n");
+            System.out.println("What should your dog eat");
+            System.out.println("pick between: Fish/Bone/Milk/Meat");
+            String waitforfood = sc.nextLine();
+            if(waitforfood.equalsIgnoreCase("Fish")){
+                System.out.println("Dog didnt mind fish but likes other things more");
+                System.out.println("Energy level is now: " + bla[0].Energyadd());
+            }
+
+        }
+        return waitforaction;
     }
 
 
@@ -79,7 +108,7 @@ public class tamogachitest {
             System.out.println("\nMenu:");
             System.out.println("1. Play with pet. cost: -2/-1 for dog/cat");
             System.out.println("2. Let pet sleep. cost: +4/+2 for dog/cat ");
-            System.out.println("3. Give pet food +5/+6 for dog/cat");
+            System.out.println("3. Give pet food +?/+? for dog/cat");
             System.out.println("4. Exit");
             System.out.print("Choose an option: ");
     }
